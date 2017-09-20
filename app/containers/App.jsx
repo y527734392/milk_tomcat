@@ -11,9 +11,6 @@ class App extends React.Component {
 
         )
     }
-    componentDidMount(){
-        console.log(123);
-    }
 }
 
 export default App

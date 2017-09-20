@@ -4,10 +4,16 @@
 
 import React from 'react'
 
+import Subnav from '../../Subnav'
 class Recommend extends React.Component {
     render() {
         return (
-            <div>Recommend</div>
+            <div className="home">
+                <Subnav data="recommend"/>
+                <div className="content">
+                    banner
+                </div>
+            </div>
         )
     }
 }

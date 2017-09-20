@@ -11,6 +11,7 @@ import Register from '../containers/Register'
 import Banner from '../containers/Admin/Banner'
 import Recommend from '../containers/Admin/Recommend'
 import Product from '../containers/Admin/Product'
+import ProductSet from '../containers/Admin/Product/Set'
 import Orderuser from '../containers/Admin/Orderuser'
 
 class RouteMap extends React.Component {
@@ -24,14 +25,14 @@ class RouteMap extends React.Component {
                     <App>
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
-                    </App>
-                    <Home>
-                        <Route exact path="/" component={Banner} />
+                        <Route exact path="/" component={Home} />
                         <Route path="/admin/banner" component={Banner} />
                         <Route path="/admin/recommend" component={Recommend} />
                         <Route path="/admin/product" component={Product} />
                         <Route path="/admin/orderuser" component={Orderuser} />
-                    </Home>
+                        <Route path="/admin/productset" component={ProductSet} />
+                    </App>
+
                 </div>
             </HashRouter>
         )

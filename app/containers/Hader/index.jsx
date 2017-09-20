@@ -5,6 +5,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import util from '../../utils/help'
+let _ = new util();
+
 class Header extends React.Component {
     render() {
         return (
@@ -16,6 +19,9 @@ class Header extends React.Component {
                 </div>
             </div>
         )
+    }
+    componentDidMount(){
+        console.log(334555);
     }
 }
 export default Header

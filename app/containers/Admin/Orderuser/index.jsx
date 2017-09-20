@@ -3,11 +3,16 @@
  */
 
 import React from 'react'
-
+import Subnav from '../../Subnav'
 class Orderuser extends React.Component {
     render() {
         return (
-            <div>Orderuser</div>
+            <div className="home">
+                <Subnav data="orderuser"/>
+                <div className="content">
+                    orderuser
+                </div>
+            </div>
         )
     }
 }
