@@ -1,6 +1,6 @@
 
 import React from 'react'
-import {BrowserRouter as Router,Route,Link,HashRouter,Switch} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Link,HashRouter,BrowserRouter,Switch} from 'react-router-dom'
 
 import App from '../containers/App'
 import Home from '../containers/Home'
@@ -20,7 +20,7 @@ class RouteMap extends React.Component {
     }
     render() {
         return (
-            <HashRouter>
+            <BrowserRouter>
                 <div>
                     <App>
                         <Route path="/login" component={Login} />
@@ -30,11 +30,11 @@ class RouteMap extends React.Component {
                         <Route path="/admin/recommend" component={Recommend} />
                         <Route path="/admin/product" component={Product} />
                         <Route path="/admin/orderuser" component={Orderuser} />
-                        <Route path="/admin/productset" component={ProductSet} />
+                        <Route path="/admin/productedit/:set" component={ProductSet} />
                     </App>
 
                 </div>
-            </HashRouter>
+            </BrowserRouter>
         )
     }
 }

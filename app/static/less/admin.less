@@ -118,6 +118,30 @@
 			}
 			.txt {
 				display: inline-block;
+				position: relative;
+				.form-group {
+					input {
+						&.ef-error-pattern {
+							border: 1px solid @f50;
+						}
+					}
+					.form-error-tip {
+						position: absolute;
+						bottom: -20px;
+						left: 0;
+						color: @f50;
+						font-size: 12px;
+					}
+				}
+				.form-type-dec {
+					position: absolute;
+					top: 0;
+					right: -20px;
+					line-height: 45px;
+					&.clr_3 {
+						color: @3;
+					}
+				}
 				input {
 					width: 360px;
 					height: 45px;
@@ -142,7 +166,10 @@
 				}
 				textarea {
 					width: 500px;
-					height: 100px
+					height: 100px;
+					padding: 10px;
+					font-size: 14px;
+					color: @0;
 				}
 			}
 		}
@@ -157,6 +184,18 @@
 		color: @3;
 		font-size: 16px;
 		cursor: pointer;
+		&.off {
+			background: @d;
+			border: 1px solid @d;
+			color: @3;
+			cursor: default;
+			&:hover {
+				background: @d;
+				border: 1px solid @d;
+				color: @3;
+				cursor: default;
+			}
+		}
 		&:hover {
 			background: green;
 			color: @f;

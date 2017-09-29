@@ -15,7 +15,7 @@ class Product extends React.Component {
                     <div className="product">
                         <div className="top clearfix">
                             <h3>产品列表</h3>
-                            <div className="creat"><Link to="/admin/productset">新增</Link></div>
+                            <div className="creat"><Link to="/admin/productedit/add">新增</Link></div>
                         </div>
                         <div className="pro_list">
                             <div className="pl_top clearfix">
@@ -34,7 +34,7 @@ class Product extends React.Component {
                                     <p className="title_shelfLife">12天</p>
                                     <p className="title_time">2017-09-07</p>
                                     <p className="title_set">
-                                        <Link to="/admin/productset"><span>编辑</span></Link>
+                                        <Link to="/admin/productedit/set"><span>编辑</span></Link>
                                         <span>删除</span>
                                     </p>
                                 </li>
@@ -45,7 +45,7 @@ class Product extends React.Component {
                                     <p className="title_shelfLife">12天</p>
                                     <p className="title_time">2017-09-07</p>
                                     <p className="title_set">
-                                        <Link to="/admin/productset"><span>编辑</span></Link>
+                                        <Link to="/admin/productedit/set"><span>编辑</span></Link>
                                         <span>删除</span>
                                     </p>
                                 </li>

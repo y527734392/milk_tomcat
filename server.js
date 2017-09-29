@@ -3,6 +3,8 @@
  */
 //引入必要模块
 var express = require("express");
+var path = require('path');
+var fs = require('fs');
 var proxy = require('http-proxy-middleware');
 
 var webpack = require('webpack');
@@ -11,6 +13,8 @@ var opn = require('opn');
 
 //创建一个express实力
 var app = express();
+
+
 
 //调用webpack并把配置传递过去
 var compiler = webpack(config);
@@ -31,6 +35,9 @@ app.use(devMiddleware);
 app.use(hotMiddleware);
 
 
+
+
+
 var port = 8800;
 // webpack插件，监听html文件改变事件
 compiler.plugin('compilation', function (compilation) {
@@ -40,7 +47,9 @@ compiler.plugin('compilation', function (compilation) {
         cb();
     })
 });
-
+app.use('*', function (request, response){
+    response.sendFile(path.resolve(__dirname, 'app/index.html'))
+});
 var uri = 'http://yt.com:' + port;
 
 //接口转发
@@ -58,6 +67,8 @@ var options = {
 };
 var exampleProxy = proxy(options);
 app.use('/api/*', exampleProxy);
+
+
 
 //8800,开启服务器
 app.listen(port,function(err){

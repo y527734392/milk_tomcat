@@ -6,7 +6,7 @@ var path = require('path');
 pluginsConfig.push(new webpack.DefinePlugin({
   IS_PRODUCTION: false,
 }));
-console.log(path.resolve(dirVars.webapckConfigDir,'postcss.config.js'));
+
 pluginsConfig.push(new webpack.LoaderOptionsPlugin({
   options: {
     //postcss: require('./postcss.config.js'),

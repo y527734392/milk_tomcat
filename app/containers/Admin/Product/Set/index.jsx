@@ -3,88 +3,45 @@
  */
 
 import React from 'react'
+import EasyForm, { Field, FieldGroup } from 'react-easyform';
+
 import Subnav from '../../../Subnav'
+import Mod from './Mod'
 import util from '../../../../utils/help'
 let _ = new util();
 
 class Set extends React.Component {
+    constructor(props, context) {
+        super(props, context);
+        console.log(this.props.params)
+        this.state = {
+            Reghttp:/^(((https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/,
+            timeout:false,
+            data:{}
+        }
+        //this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    }
     render() {
         return (
             <div className="home">
                 <Subnav />
-                <div className="content">
-                    <div className="product_set">
-                        <h3>新增/编辑</h3>
-                        <form action="">
-                            <ul className="con">
-                                <li className="">
-                                    <span className="title">产品名称：</span>
-                                    <div className="txt">
-                                        <input type="text" placeholder="请输入产品名称"/>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">产品类别：</span>
-                                    <div className="txt">
-                                        <ul>
-                                            <li className="form-readio">
-                                                <input type="radio" name="model" className="radio" value="1" /> <label>酸奶</label>
-                                            </li>
-                                            <li className="form-readio">
-                                                <input type="radio" name="model" className="radio" value="2" /> <label>鲜奶</label>
-                                            </li>
-                                            <li className="form-readio">
-                                                <input type="radio" name="model" className="radio" value="3" /> <label>儿童奶</label>
-                                            </li>
-                                            <li className="form-readio">
-                                                <input type="radio" name="model" className="radio" value="4" /> <label>其他</label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">规格：</span>
-                                    <div className="txt">
-                                        <input type="text" placeholder="请输入产品规格"/>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">产地：</span>
-                                    <div className="txt">
-                                        <input type="text" placeholder="请输入产品产地"/>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">保质期：</span>
-                                    <div className="txt">
-                                        <input type="text" placeholder="请输入产品保质期"/>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">储藏方法：</span>
-                                    <div className="txt">
-                                        <input type="text" placeholder="请输入产品储藏方法"/>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">产品图片：</span>
-                                    <div className="txt">
-                                        <input type="text" placeholder="请输入产品名称"/>
-                                    </div>
-                                </li>
-                                <li className="">
-                                    <span className="title">产品详情：</span>
-                                    <div className="txt">
-                                        <textarea name="" placeholder="请输入产品详情"></textarea>
-                                    </div>
-                                </li>
-                            </ul>
-                        </form>
-                        <div className="product_setBtn">保存</div>
-                    </div>
-                </div>
+                {!this.state.timeout
+                ?'加载中...'
+                : <Mod data={this.state.data}/>
+                }
             </div>
         )
+    }
+    componentDidMount(){
+        setTimeout(()=>{
+            this.setState({
+                timeout:true,
+                data : {
+                    timeout:112,
+                    address:'北京'
+                },
+            })
+        },2000)
     }
 }
 export default Set
