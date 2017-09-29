@@ -5,7 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack":"webpack-dev-server --history-api-fallback --config ./webpack.dev.config.js",
+    "webpack": "webpack-dev-server --history-api-fallback --config ./webpack.dev.config.js",
     "dev": "node ./server.js",
     "analyzer": "webpack --json > stats.json && ./node_modules/.bin/webpack-bundle-analyzer --port 8989 stats.json"
   },
@@ -45,6 +45,7 @@
     "webpack-plugin-hash-output": "^1.3.0"
   },
   "dependencies": {
+    "connect-history-api-fallback": "^1.3.0",
     "npm-zepto": "^1.1.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

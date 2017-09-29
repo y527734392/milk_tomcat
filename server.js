@@ -6,6 +6,7 @@ var express = require("express");
 var path = require('path');
 var fs = require('fs');
 var proxy = require('http-proxy-middleware');
+var history = require('connect-history-api-fallback');
 
 var webpack = require('webpack');
 var config = require('./webpack.dev.config');
@@ -14,6 +15,7 @@ var opn = require('opn');
 //创建一个express实力
 var app = express();
 
+app.use(history());
 
 
 //调用webpack并把配置传递过去
@@ -47,9 +49,9 @@ compiler.plugin('compilation', function (compilation) {
         cb();
     })
 });
-app.use('*', function (request, response){
-    response.sendFile(path.resolve(__dirname, 'app/index.html'))
-});
+
+
+
 var uri = 'http://yt.com:' + port;
 
 //接口转发
