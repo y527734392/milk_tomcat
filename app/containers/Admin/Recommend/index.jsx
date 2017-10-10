@@ -11,7 +11,7 @@ class Recommend extends React.Component {
             <div className="home">
                 <Subnav data="recommend"/>
                 <div className="content">
-                    banner
+                    recomend
                 </div>
             </div>
         )
